@@ -7,6 +7,10 @@
         My manifesto statement is by selce:
         "Design is for everyone, with no distinctions."
         https://designmanifestos.org/selce-manifesto/
+
+        My intention with this project was to emphasize the statemets of "everyone" and "distinctions," as I felt as those two words contrasted each other and also served as the main basis of selce's argument. As such, I began by establishing a style for the other words ("Design is for..." and "with no..."), before moving on to the key words. I opted to keep the style between the two of them similar, only changing the way the line interacts with them. "Everyone" was underlined, in order to force the user to see the emphasis on how universal design is. "Distinctions" was crossed through, in order to designate that no one should be kept from design. The staggering of the word also forced the user to interact with the page, as they were required to scroll and search for the entirety of the message. 
+
+        JavaScript code found and adapted from https://www.w3schools.com/JSREF/event_onmouseover.asp
     -->  
   
 <link href="https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&display=swap" rel="stylesheet">
@@ -50,12 +54,42 @@
 
     </style>
 </head>
+
 <body style="background-color:cornsilk;">
 
-    <h1>Design is for</h1>
-    <p><b>everyone,</b></p>
-    <h1>with no</h1>
-    <h2>d<br>&nbsp;&nbsp;i<br>&nbsp;&nbsp;&nbsp;&nbsp;s<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;o<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s</h2>
+    <h1 id="demo">Design is for</h1>
+    <p id="demo1"><b>everyone,</b></p>
+    <h1 id="demo3">with no</h1>
+    <h2 id="demo2">d<br>&nbsp;&nbsp;i<br>&nbsp;&nbsp;&nbsp;&nbsp;s<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;o<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s</h2></body>
+<script>
+document.getElementById("demo").onmouseover = function() {mouseOver()};
+document.getElementById("demo").onmouseout = function() {mouseOut()};
 
-</body>
-</html> 
+document.getElementById("demo1").onmouseover = function() {mouseOver()};
+document.getElementById("demo1").onmouseout = function() {mouseOut()};
+
+//document.getElementById("demo2").onmouseover = function() {mouseOver()};
+//document.getElementById("demo2").onmouseout = function() {mouseOut()};
+
+document.getElementById("demo3").onmouseover = function() {mouseOver()};
+document.getElementById("demo3").onmouseout = function() {mouseOut()};
+
+
+function mouseOver() {
+  document.getElementById("demo").style.color = "darkred";
+  //document.getElementById("demo2").style.fontSize = "700%";
+  document.getElementById("demo1").style.fontFamily = "impact";
+  document.getElementById("demo3").style.color="darkred"
+  
+}
+
+function mouseOut() {
+  document.getElementById("demo").style.color = "black";
+  //document.getElementById("demo2").style.fontSize = "300%";
+  document.getElementById("demo1").style.fontFamily = "Playwrite Cu";
+  document.getElementById("demo3").style.color="black"
+}
+</script>
+</html>
+
+
