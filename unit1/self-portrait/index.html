@@ -7,19 +7,119 @@
 
     <title>My Self Portrait</title> 
     <!--
-        Use this page to complete the "Data Self Portrait" project:
-        https://canvas.umw.edu/courses/1499064/assignments/11895984
+       Approaching this project, I wanted to interpret the quote "to define is to limit" from Oscar Wilde's 'The Picture of Dorian Gray.' I really love this quote, and I think that it provides an interesting flip to the project, where I'm inherently trying to define myself in things that are countable. I worked with the text style first, then added the additional elements. I wanted them to all layer over each other to show the layers of who I am.
+
+       Font is "Lora," sourced from GoogleFonts.
     -->  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 
-    <style type="text/css">
+<style type="text/css">
 
 
+   #bookly{
+        position: absolute; left:575px; top: 220px;
+        height: 350px;
+        width: 250px;
+        display: none;
+    }
+   #playlist{
+        position: absolute; left:820px; top: 150px;
+        height: 400px;
+        width: 300px;
+        display: none;
+   }
 
+#img1{
+    position: absolute; left: 75px;
+    height: 300px;
+    width: 500px;
+    display: none;
+}
+#dogs{
+    position: absolute; left:350px; top: 305px;
+    height: 300px;
+    width: 200px;
+    display: none;
+}
+#cords{
+    position: absolute; left:1000px; top: 10px;
+    height: 200px;
+    width: 300px;
+    display: none;
+}
+#streak{
+    position: absolute; left: 575px; top: 0px;
+    height: 220px;
+    width: 250px;
+    display: none;
+}
+
+p {
+    font-family: Lora;
+    font-size: 125px;
+    text-align: center;
+    border: 50px;
+    position: relative;
+} 
     </style>
-
 </head>
-<body>
 
+<body style="background-color:cornsilk;">
+    <img id="bookly" src="C:\Users\rylie\OneDrive\Desktop\Fall 24\1- Creative Coding\creative-coding\unit1\self-portrait\20240917_011649713_iOS.png" />
+    <img id="img1" src="C:\Users\rylie\OneDrive\Desktop\Fall 24\1- Creative Coding\creative-coding\unit1\self-portrait\Screenshot 2024-09-16 212451.png"/>
+    <img id="playlist" src ="C:\Users\rylie\OneDrive\Desktop\Fall 24\1- Creative Coding\creative-coding\unit1\self-portrait\Screenshot 2024-09-16 215753.png"/>
+    <img id ="dogs" src = "C:\Users\rylie\OneDrive\Desktop\Fall 24\1- Creative Coding\creative-coding\unit1\self-portrait\IMG_5459.jpg"/>
+    <img id="streak" src = "C:\Users\rylie\OneDrive\Desktop\Fall 24\1- Creative Coding\creative-coding\unit1\self-portrait\IMG_5767.JPG"/>
+    <img id="cords" src = "C:\Users\rylie\OneDrive\Desktop\Fall 24\1- Creative Coding\creative-coding\unit1\self-portrait\IMG_4521.jpg" />
+
+  <p id="demo">
+        To define is to limit.
+        </p>
+
+<script>
+    document.getElementById("demo").onmouseover = function() {mouseOver()};
+    document.getElementById("demo").onmouseout = function() {mouseOut()};
+
+    document.getElementById("img1").onmouseover = function() {mouseOver()};
+    document.getElementById("img1").onmouseout = function() {mouseOut()};
+
+    document.getElementById("bookly").onmouseover = function() {mouseOver()};
+    document.getElementById("bookly").onmouseout = function() {mouseOut()};
+
+    document.getElementById("playlist").onmouseover = function() {mouseOver()};
+    document.getElementById("playlist").onmouseout = function() {mouseOut()};
+
+    document.getElementById("dogs").onmouseover = function() {mouseOver()};
+    document.getElementById("dogs").onmouseout = function() {mouseOut()};
+
+    document.getElementById("cords").onmouseover = function() {mouseOver()};
+    document.getElementById("cords").onmouseout = function() {mouseOut()};
+
+    document.getElementById("streak").onmouseover = function() {mouseOver()};
+    document.getElementById("streak").onmouseout = function() {mouseOut()};
+
+    function mouseOver() {
+  document.getElementById("demo").style.display = "none";
+  document.getElementById("img1").style.display = "block";
+  document.getElementById("bookly").style.display = "block";
+  document.getElementById("playlist").style.display = "block";
+  document.getElementById("dogs").style.display = "block";
+  document.getElementById("cords").style.display = "block";
+  document.getElementById("streak").style.display = "block";
+}
+
+function mouseOut() {
+  document.getElementById("demo").style.display = "block";
+  document.getElementById("img1").style.display = "none";
+  document.getElementById("bookly").style.display = "none";
+  document.getElementById("playlist").style.display = "none";
+  document.getElementById("dogs").style.display = "none"; 
+  document.getElementById("cords").style.display = "none";
+  document.getElementById("streak").style.display = "none";
+}
+</script>
 
 </body>
 </html> 
