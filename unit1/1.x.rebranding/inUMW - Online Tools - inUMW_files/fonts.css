@@ -1,0 +1,426 @@
+/* @ Fonts
+Updated 2015-08-07
+------------------------------------------------------------ */
+
+@font-face {
+    font-family: 'MuseoSans';
+    src: url('fonts/MuseoSans2015/MuseoSans_300-webfont .eot'); /* IE9 Compat Modes */
+    src: url('fonts/MuseoSans2015/MuseoSans_300-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/MuseoSans2015/MuseoSans_300-webfont.woff2') format('woff2'), /* Modern Browsers */
+         url('fonts/MuseoSans2015/MuseoSans_300-webfont.woff') format('woff'), /* Modern Browsers */
+         url('fonts/MuseoSans2015/MuseoSans_300-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('fonts/MuseoSans2015/MuseoSans_300-webfont.svg#museo_sans300') format('svg'); /* Legacy iOS */
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MuseoSans';
+    src: url('fonts/MuseoSans2015/MuseoSans_300_Italic-webfont .eot'); /* IE9 Compat Modes */
+    src: url('fonts/MuseoSans2015/MuseoSans_300_Italic-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/MuseoSans2015/MuseoSans_300_Italic-webfont.woff2') format('woff2'), /* Modern Browsers */
+         url('fonts/MuseoSans2015/MuseoSans_300_Italic-webfont.woff') format('woff'), /* Modern Browsers */
+         url('fonts/MuseoSans2015/MuseoSans_300_Italic-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('fonts/MuseoSans2015/MuseoSans_300_Italic-webfont.svg#museo_sans300_italic') format('svg'); /* Legacy iOS */
+    font-weight: 300;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'MuseoSans';
+    src: url('fonts/MuseoSans2015/MuseoSans_500-webfont .eot'); /* IE9 Compat Modes */
+    src: url('fonts/MuseoSans2015/MuseoSans_500-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/MuseoSans2015/MuseoSans_500-webfont.woff2') format('woff2'), /* Modern Browsers */
+         url('fonts/MuseoSans2015/MuseoSans_500-webfont.woff') format('woff'), /* Modern Browsers */
+         url('fonts/MuseoSans2015/MuseoSans_500-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('fonts/MuseoSans2015/MuseoSans_500-webfont.svg#museo_sans500') format('svg'); /* Legacy iOS */
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MuseoSans';
+    src: url('fonts/MuseoSans2015/MuseoSans_500_Italic-webfont .eot'); /* IE9 Compat Modes */
+    src: url('fonts/MuseoSans2015/MuseoSans_500_Italic-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/MuseoSans2015/MuseoSans_500_Italic-webfont.woff2') format('woff2'), /* Modern Browsers */
+         url('fonts/MuseoSans2015/MuseoSans_500_Italic-webfont.woff') format('woff'), /* Modern Browsers */
+         url('fonts/MuseoSans2015/MuseoSans_500_Italic-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('fonts/MuseoSans2015/MuseoSans_500_Italic-webfont.svg#museo_sans500_italic') format('svg'); /* Legacy iOS */
+    font-weight: 500;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'MuseoSans';
+    src: url('fonts/MuseoSans2015/MuseoSans_700-webfont .eot'); /* IE9 Compat Modes */
+    src: url('fonts/MuseoSans2015/MuseoSans_700-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/MuseoSans2015/MuseoSans_700-webfont.woff2') format('woff2'), /* Modern Browsers */
+         url('fonts/MuseoSans2015/MuseoSans_700-webfont.woff') format('woff'), /* Modern Browsers */
+         url('fonts/MuseoSans2015/MuseoSans_700-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('fonts/MuseoSans2015/MuseoSans_700-webfont.svg#museo_sans700') format('svg'); /* Legacy iOS */
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MuseoSans';
+    src: url('fonts/MuseoSans2015/MuseoSans_700_Italic-webfont .eot'); /* IE9 Compat Modes */
+    src: url('fonts/MuseoSans2015/MuseoSans_700_Italic-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/MuseoSans2015/MuseoSans_700_Italic-webfont.woff2') format('woff2'), /* Modern Browsers */
+         url('fonts/MuseoSans2015/MuseoSans_700_Italic-webfont.woff') format('woff'), /* Modern Browsers */
+         url('fonts/MuseoSans2015/MuseoSans_700_Italic-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('fonts/MuseoSans2015/MuseoSans_700_Italic-webfont.svg#museo_sans700_italic') format('svg'); /* Legacy iOS */
+    font-weight: 700;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'MuseoSans';
+    src: url('fonts/MuseoSans2015/MuseoSans_900-webfont .eot'); /* IE9 Compat Modes */
+    src: url('fonts/MuseoSans2015/MuseoSans_900-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/MuseoSans2015/MuseoSans_900-webfont.woff2') format('woff2'), /* Modern Browsers */
+         url('fonts/MuseoSans2015/MuseoSans_900-webfont.woff') format('woff'), /* Modern Browsers */
+         url('fonts/MuseoSans2015/MuseoSans_900-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('fonts/MuseoSans2015/MuseoSans_900-webfont.svg#museo_sans900') format('svg'); /* Legacy iOS */
+    font-weight: 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MuseoSans';
+    src: url('fonts/MuseoSans2015/MuseoSans_900_Italic-webfont .eot'); /* IE9 Compat Modes */
+    src: url('fonts/MuseoSans2015/MuseoSans_900_Italic-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/MuseoSans2015/MuseoSans_900_Italic-webfont.woff2') format('woff2'), /* Modern Browsers */
+         url('fonts/MuseoSans2015/MuseoSans_900_Italic-webfont.woff') format('woff'), /* Modern Browsers */
+         url('fonts/MuseoSans2015/MuseoSans_900_Italic-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('fonts/MuseoSans2015/MuseoSans_900_Italic-webfont.svg#museo_sans900_italic') format('svg'); /* Legacy iOS */
+    font-weight: 900;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'MuseoSlab';
+    src: url('fonts/MuseoSlab2015/Museo_Slab_300-webfont .eot'); /* IE9 Compat Modes */
+    src: url('fonts/MuseoSlab2015/Museo_Slab_300-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/MuseoSlab2015/Museo_Slab_300-webfont.woff2') format('woff2'), /* Modern Browsers */
+         url('fonts/MuseoSlab2015/Museo_Slab_300-webfont.woff') format('woff'), /* Modern Browsers */
+         url('fonts/MuseoSlab2015/Museo_Slab_300-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('fonts/MuseoSlab2015/Museo_Slab_300-webfont.svg#museo_slab300') format('svg'); /* Legacy iOS */
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MuseoSlab';
+    src: url('fonts/MuseoSlab2015/Museo_Slab_300italic-webfont .eot'); /* IE9 Compat Modes */
+    src: url('fonts/MuseoSlab2015/Museo_Slab_300italic-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/MuseoSlab2015/Museo_Slab_300italic-webfont.woff2') format('woff2'), /* Modern Browsers */
+         url('fonts/MuseoSlab2015/Museo_Slab_300italic-webfont.woff') format('woff'), /* Modern Browsers */
+         url('fonts/MuseoSlab2015/Museo_Slab_300italic-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('fonts/MuseoSlab2015/Museo_Slab_300italic-webfont.svg#museo_slab300_italic') format('svg'); /* Legacy iOS */
+    font-weight: 300;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'MuseoSlab';
+    src: url('fonts/MuseoSlab2015/Museo_Slab_500-webfont .eot'); /* IE9 Compat Modes */
+    src: url('fonts/MuseoSlab2015/Museo_Slab_500-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/MuseoSlab2015/Museo_Slab_500-webfont.woff2') format('woff2'), /* Modern Browsers */
+         url('fonts/MuseoSlab2015/Museo_Slab_500-webfont.woff') format('woff'), /* Modern Browsers */
+         url('fonts/MuseoSlab2015/Museo_Slab_500-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('fonts/MuseoSlab2015/Museo_Slab_500-webfont.svg#museo_slab500') format('svg'); /* Legacy iOS */
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MuseoSlab';
+    src: url('fonts/MuseoSlab2015/Museo_Slab_500italic-webfont .eot'); /* IE9 Compat Modes */
+    src: url('fonts/MuseoSlab2015/Museo_Slab_500italic-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/MuseoSlab2015/Museo_Slab_500italic-webfont.woff2') format('woff2'), /* Modern Browsers */
+         url('fonts/MuseoSlab2015/Museo_Slab_500italic-webfont.woff') format('woff'), /* Modern Browsers */
+         url('fonts/MuseoSlab2015/Museo_Slab_500italic-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('fonts/MuseoSlab2015/Museo_Slab_500italic-webfont.svg#museo_slab500_italic') format('svg'); /* Legacy iOS */
+    font-weight: 500;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'MuseoSlab';
+    src: url('fonts/MuseoSlab2015/Museo_Slab_700-webfont .eot'); /* IE9 Compat Modes */
+    src: url('fonts/MuseoSlab2015/Museo_Slab_700-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/MuseoSlab2015/Museo_Slab_700-webfont.woff2') format('woff2'), /* Modern Browsers */
+         url('fonts/MuseoSlab2015/Museo_Slab_700-webfont.woff') format('woff'), /* Modern Browsers */
+         url('fonts/MuseoSlab2015/Museo_Slab_700-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('fonts/MuseoSlab2015/Museo_Slab_700-webfont.svg#museo_slab700') format('svg'); /* Legacy iOS */
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MuseoSlab';
+    src: url('fonts/MuseoSlab2015/Museo_Slab_700italic-webfont .eot'); /* IE9 Compat Modes */
+    src: url('fonts/MuseoSlab2015/Museo_Slab_700italic-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/MuseoSlab2015/Museo_Slab_700italic-webfont.woff2') format('woff2'), /* Modern Browsers */
+         url('fonts/MuseoSlab2015/Museo_Slab_700italic-webfont.woff') format('woff'), /* Modern Browsers */
+         url('fonts/MuseoSlab2015/Museo_Slab_700italic-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('fonts/MuseoSlab2015/Museo_Slab_700italic-webfont.svg#museo_slab700_italic') format('svg'); /* Legacy iOS */
+    font-weight: 700;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'MuseoSlab';
+    src: url('fonts/MuseoSlab2015/Museo_Slab_900-webfont .eot'); /* IE9 Compat Modes */
+    src: url('fonts/MuseoSlab2015/Museo_Slab_900-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/MuseoSlab2015/Museo_Slab_900-webfont.woff2') format('woff2'), /* Modern Browsers */
+         url('fonts/MuseoSlab2015/Museo_Slab_900-webfont.woff') format('woff'), /* Modern Browsers */
+         url('fonts/MuseoSlab2015/Museo_Slab_900-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('fonts/MuseoSlab2015/Museo_Slab_900-webfont.svg#museo_slab900') format('svg'); /* Legacy iOS */
+    font-weight: 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MuseoSlab';
+    src: url('fonts/MuseoSlab2015/Museo_Slab_900italic-webfont .eot'); /* IE9 Compat Modes */
+    src: url('fonts/MuseoSlab2015/Museo_Slab_900italic-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/MuseoSlab2015/Museo_Slab_900italic-webfont.woff2') format('woff2'), /* Modern Browsers */
+         url('fonts/MuseoSlab2015/Museo_Slab_900italic-webfont.woff') format('woff'), /* Modern Browsers */
+         url('fonts/MuseoSlab2015/Museo_Slab_900italic-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('fonts/MuseoSlab2015/Museo_Slab_900italic-webfont.svg#museo_slab900_italic') format('svg'); /* Legacy iOS */
+    font-weight: 900;
+    font-style: italic;
+}
+
+/**
+ * New Mindpower brand fonts
+ * Added: 2021-05-19
+ */
+@font-face {
+    font-family: "Stroma";
+    font-weight: normal;
+    font-style: normal;
+    src: url('webFonts/StromaRegular/font.woff2') format('woff2'), url('webFonts/StromaRegular/font.woff') format('woff');
+}
+@font-face {
+    font-family: "Stroma";
+    font-weight: normal;
+    font-style: italic;
+    src: url('webFonts/StromaItalic/font.woff2') format('woff2'),
+        url('webFonts/StromaItalic/font.woff') format('woff');
+}
+@font-face {
+    font-family: "Stroma";
+    font-weight: 700;
+    font-style: normal;
+    src: url('webFonts/StromaBold/font.woff2') format('woff2'),
+        url('webFonts/StromaBold/font.woff') format('woff');
+}
+@font-face {
+    font-family: "Stroma";
+    font-weight: 300;
+    font-style: normal;
+    src: url('webFonts/StromaLight/font.woff2') format('woff2'),
+        url('webFonts/StromaLight/font.woff') format('woff');
+}
+@font-face {
+    font-family: "Stroma";
+    font-weight: 300;
+    font-style: italic;
+    src: url('webFonts/StromaLightItalic/font.woff2') format('woff2'),
+        url('webFonts/StromaLightItalic/font.woff') format('woff');
+}
+@font-face {
+    font-family: "Stroma";
+    font-weight: 700;
+    font-style: italic;
+    src: url('webFonts/StromaBoldItalic/font.woff2') format('woff2'),
+        url('webFonts/StromaBoldItalic/font.woff') format('woff');
+}
+@font-face {
+    font-family: "Stroma";
+    font-weight: 500;
+    font-style: normal;
+    src: url('webFonts/StromaMedium/font.woff2') format('woff2'),
+        url('webFonts/StromaMedium/font.woff') format('woff');
+}
+@font-face {
+    font-family: "Stroma";
+    font-weight: 500;
+    font-style: italic;
+    src: url('webFonts/StromaMediumItalic/font.woff2') format('woff2'),
+        url('webFonts/StromaMediumItalic/font.woff') format('woff');
+}
+
+@font-face {
+    font-family: "EvanstonTavern-1893";
+    font-weight: 700;
+    font-style: normal;
+    src: url('webFonts/EvanstonTavern1893Bold/font.woff2') format('woff2'),
+        url('webFonts/EvanstonTavern1893Bold/font.woff') format('woff');
+}
+
+@font-face {
+    font-family: "ProximaNova";
+    font-weight: normal;
+    font-style: normal;
+    src: url('fonts/Proxima Nova/woff/proximanova-regular-webfont.woff2') format('woff2'),
+        url('fonts/Proxima Nova/woff/proximanova-regular-webfont.woff') format('woff'),
+        url('fonts/Proxima Nova/ProximaNova-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: "ProximaNova";
+    font-weight: 700;
+    font-style: normal;
+    src: url('fonts/Proxima Nova/woff/proxima-nova-bold-webfont.woff2') format('woff2'),
+        url('fonts/Proxima Nova/woff/proxima-nova-bold-webfont.woff') format('woff'),
+        url('fonts/Proxima Nova/Proxima-Nova-Bold.otf') format('opentype');
+}
+@font-face {
+    font-family: "ProximaNova";
+    font-weight: 300;
+    font-style: normal;
+    src: url('fonts/Proxima Nova/woff/proxima-nova-light-webfont.woff2') format('woff2'),
+    url('fonts/Proxima Nova/woff/proxima-nova-light-webfont.woff') format('woff'),
+    url('fonts/Proxima Nova/Proxima-Nova-Light.otf') format('opentype');
+}
+@font-face {
+    font-family: "ProximaNova";
+    font-weight: 500;
+    font-style: normal;
+    src: url('fonts/Proxima Nova/Proxima-Nova-Medium.ttf') format('truetype');
+}
+@font-face {
+    font-family: "ProximaNova";
+    font-weight: normal;
+    font-style: italic;
+    src: url('fonts/Proxima Nova/woff/proxima-nova-reg-it-webfont.woff2') format('woff2'),
+    url('fonts/Proxima Nova/woff/proxima-nova-reg-it-webfont.woff') format('woff'),
+    url('fonts/Proxima Nova/Proxima-Nova-Reg-It.otf') format('opentype');
+}
+@font-face {
+    font-family: "ProximaNova";
+    font-weight: 700;
+    font-style: italic;
+    src: url('fonts/Proxima Nova/woff/proxima-nova-bold-it-webfont.woff2') format('woff2'),
+    url('fonts/Proxima Nova/woff/proxima-nova-bold-it-webfont.woff') format('woff'),
+    url('fonts/Proxima Nova/Proxima-Nova-Bold-It.otf') format('opentype');
+}
+@font-face {
+    font-family: "ProximaNova";
+    font-weight: 200;
+    font-style: italic;
+    src: url('fonts/Proxima Nova/woff/proxima-nova-light-it-webfont.woff2') format('woff2'),
+    url('fonts/Proxima Nova/woff/proxima-nova-light-it-webfont.woff') format('woff'),
+    url('fonts/Proxima Nova/Proxima-Nova-Light-It.otf') format('opentype');
+}
+
+/**
+ * New Mindpower brand fonts
+ * Added: 2021-05-19
+ */
+@font-face {
+    font-family: "UMWSerif";
+    font-weight: normal;
+    font-style: normal;
+    src: url('webFonts/StromaRegular/font.woff2') format('woff2'), url('webFonts/StromaRegular/font.woff') format('woff');
+}
+@font-face {
+    font-family: "UMWSerif";
+    font-weight: normal;
+    font-style: italic;
+    src: url('webFonts/StromaItalic/font.woff2') format('woff2'),
+    url('webFonts/StromaItalic/font.woff') format('woff');
+}
+@font-face {
+    font-family: "UMWSerif";
+    font-weight: 700;
+    font-style: normal;
+    src: url('webFonts/StromaBold/font.woff2') format('woff2'),
+    url('webFonts/StromaBold/font.woff') format('woff');
+}
+@font-face {
+    font-family: "UMWSerif";
+    font-weight: 300;
+    font-style: normal;
+    src: url('webFonts/StromaLight/font.woff2') format('woff2'),
+    url('webFonts/StromaLight/font.woff') format('woff');
+}
+@font-face {
+    font-family: "UMWSerif";
+    font-weight: 300;
+    font-style: italic;
+    src: url('webFonts/StromaLightItalic/font.woff2') format('woff2'),
+    url('webFonts/StromaLightItalic/font.woff') format('woff');
+}
+@font-face {
+    font-family: "UMWSerif";
+    font-weight: 700;
+    font-style: italic;
+    src: url('webFonts/StromaBoldItalic/font.woff2') format('woff2'),
+    url('webFonts/StromaBoldItalic/font.woff') format('woff');
+}
+@font-face {
+    font-family: "UMWSerif";
+    font-weight: 500;
+    font-style: normal;
+    src: url('webFonts/StromaMedium/font.woff2') format('woff2'),
+    url('webFonts/StromaMedium/font.woff') format('woff');
+}
+@font-face {
+    font-family: "UMWSerif";
+    font-weight: 500;
+    font-style: italic;
+    src: url('webFonts/StromaMediumItalic/font.woff2') format('woff2'),
+    url('webFonts/StromaMediumItalic/font.woff') format('woff');
+}
+
+@font-face {
+    font-family: "UMWImpact";
+    font-weight: 700;
+    font-style: normal;
+    src: url('webFonts/EvanstonTavern1893Bold/font.woff2') format('woff2'),
+    url('webFonts/EvanstonTavern1893Bold/font.woff') format('woff');
+}
+
+@font-face {
+    font-family: "UMWSans";
+    font-weight: normal;
+    font-style: normal;
+    src: url('fonts/Proxima Nova/woff/proximanova-regular-webfont.woff2') format('woff2'),
+    url('fonts/Proxima Nova/woff/proximanova-regular-webfont.woff') format('woff'),
+    url('fonts/Proxima Nova/ProximaNova-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: "UMWSans";
+    font-weight: 700;
+    font-style: normal;
+    src: url('fonts/Proxima Nova/woff/proxima-nova-bold-webfont.woff2') format('woff2'),
+    url('fonts/Proxima Nova/woff/proxima-nova-bold-webfont.woff') format('woff'),
+    url('fonts/Proxima Nova/Proxima-Nova-Bold.otf') format('opentype');
+}
+@font-face {
+    font-family: "UMWSans";
+    font-weight: 300;
+    font-style: normal;
+    src: url('fonts/Proxima Nova/woff/proxima-nova-light-webfont.woff2') format('woff2'),
+    url('fonts/Proxima Nova/woff/proxima-nova-light-webfont.woff') format('woff'),
+    url('fonts/Proxima Nova/Proxima-Nova-Light.otf') format('opentype');
+}
+@font-face {
+    font-family: "UMWSans";
+    font-weight: 500;
+    font-style: normal;
+    src: url('fonts/Proxima Nova/Proxima-Nova-Medium.ttf') format('truetype');
+}
+@font-face {
+    font-family: "UMWSans";
+    font-weight: normal;
+    font-style: italic;
+    src: url('fonts/Proxima Nova/woff/proxima-nova-reg-it-webfont.woff2') format('woff2'),
+    url('fonts/Proxima Nova/woff/proxima-nova-reg-it-webfont.woff') format('woff'),
+    url('fonts/Proxima Nova/Proxima-Nova-Reg-It.otf') format('opentype');
+}
+@font-face {
+    font-family: "UMWSans";
+    font-weight: 700;
+    font-style: italic;
+    src: url('fonts/Proxima Nova/woff/proxima-nova-bold-it-webfont.woff2') format('woff2'),
+    url('fonts/Proxima Nova/woff/proxima-nova-bold-it-webfont.woff') format('woff'),
+    url('fonts/Proxima Nova/Proxima-Nova-Bold-It.otf') format('opentype');
+}
+@font-face {
+    font-family: "UMWSans";
+    font-weight: 200;
+    font-style: italic;
+    src: url('fonts/Proxima Nova/woff/proxima-nova-light-it-webfont.woff2') format('woff2'),
+    url('fonts/Proxima Nova/woff/proxima-nova-light-it-webfont.woff') format('woff'),
+    url('fonts/Proxima Nova/Proxima-Nova-Light-It.otf') format('opentype');
+}

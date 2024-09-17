@@ -1,0 +1,369 @@
+/**
+ * UMW Analytics
+ * External and event tracking code
+ * @version 0.3.16
+ */
+
+var UMWAnalytics = UMWAnalytics || {
+	'timeout' : 100,
+	'init' : function() {
+	},
+	'gaExists' : function() {
+		if ( 'undefined' === typeof( ga ) ) {
+			return false;
+		}
+		return true;
+	}, 
+	'doClick' : function( e ) {
+		if ( UMWAnalytics.gaExists() ) {
+			var tmpArgs = {
+			  'hitType': 'event',          // Required.
+			  'eventCategory' : jQuery( e ).attr( 'analytics-category' ),
+			  'eventAction' : jQuery( e ).attr( 'analytics-action' ),
+			  'eventLabel' : jQuery( e ).attr( 'analytics-label' ),
+			  'eventValue' : 1, 
+			  'field' : { 'nonInteraction': 1 }
+			};
+			UMWAnalytics.log( 'Preparing to send the following args to Analytics:' );
+			UMWAnalytics.log( tmpArgs );
+			ga('send', tmpArgs);
+			ga('2015UMWProfile.send', tmpArgs);
+		}
+		return true;
+	}, 
+	'elementExists' : function( e ) {
+		return document.querySelectorAll( e ).length > 0;
+	},
+	'log' : function( m ) {
+		if ( typeof( console ) !== 'undefined' ) {
+			console.log( m );
+		} else {
+			return false;
+		}
+	}
+};
+
+jQuery( function() {
+	if( UMWAnalytics.gaExists() != true ) {
+		return;
+	}
+
+	// Creating custom :external selector
+	jQuery.expr[':'].external = function(obj){
+		return !obj.href.match(/^mailto\:/)
+				&& (obj.hostname != location.hostname);
+	};
+
+	// Add 'external' CSS class to all external links
+	jQuery('a').filter( function() {
+		return this.hostname != location.hostname && this.hostname in umw_internal_sites;
+	} ).attr( 'analytics-cross-domain', 'yes' ).on( 'click', function(e) {
+		// Avoid doing anything with mega-menu items that are just supposed to open sub-menus
+		if ( jQuery( this ).closest( 'ul.mega-menu' ).length > 0 && jQuery( this ).closest( 'ul.mega-menu' ).attr( 'data-event' ) == 'click' ) {
+			return;
+		}
+		
+		return true;
+	} );
+
+	// Track the new Online Tools toolbar links
+	// Works on all implementations of online toolbar
+	if ( UMWAnalytics.elementExists( '.umw-helpful-links .umw-tools' ) ) {
+		jQuery( '.umw-helpful-links .umw-tools a[href!="#"][href][href!=""]' ).each( function() {
+			var tmpAction = 'Online Tools';
+			var tmpLabel = jQuery( this ).text();
+
+			jQuery( this )
+				.attr( 'analytics-category', 'Helpful Links' )
+				.attr( 'analytics-action', tmpAction )
+				.attr( 'analytics-label', tmpLabel );
+
+			jQuery( this ).on( 'click', function(e) {
+				var tmpResult = UMWAnalytics.doClick( this );
+				/*UMWAnalytics.log( tmpResult );*/
+				return tmpResult;
+			} );
+		} );
+	}
+
+	// Track header Audience Menu clicks
+	// Works on both sites
+	if ( UMWAnalytics.elementExists( '.umw-audience-menu' ) ) {
+		jQuery( '.umw-audience-menu a[href!="#"][href][href!=""]' ).each( function() {
+			var tmpAction = 'Audience Menu';
+			var tmpLabel = jQuery( this ).text();
+
+			jQuery( this )
+				.attr( 'analytics-category', 'UMW Header Bar' )
+				.attr( 'analytics-action', tmpAction )
+				.attr( 'analytics-label', tmpLabel );
+
+			jQuery( this ).on( 'click', function(e) {
+				var tmpResult = UMWAnalytics.doClick( this );
+				/*UMWAnalytics.log( tmpResult );*/
+				return tmpResult;
+			} );
+		} );
+	}
+
+	// Track Footer Links clicks on old website
+	if ( UMWAnalytics.elementExists( '#footer' ) ) {
+		jQuery( '#footer a[href!="#"][href][href!=""]' ).each( function() {
+			var tmpAction = null;
+			var tmpLabel = null;
+			if ( jQuery( this ).closest( '.umw-viewbook' ).length > 0 ) {
+				tmpAction = 'Viewbook Link';
+				tmpLabel = jQuery( this ).closest( '.international-viewbook' ).length > 0 ? 'International Viewbook' : 'Standard Viewbook';
+			} else if ( jQuery( this ).closest( '#umw-footer-nav' ).length > 0 ) {
+				tmpAction = 'Mega Footer Navigation';
+				tmpLabel = jQuery( this ).text();
+			} else {
+				tmpAction = 'Global Footer Links';
+				tmpLabel = jQuery( this ).text();
+			}
+
+			jQuery( this )
+				.attr( 'analytics-category', 'Footer Links' )
+				.attr( 'analytics-action', tmpAction )
+				.attr( 'analytics-label', tmpLabel );
+
+			jQuery( this ).on( 'click', function(e) {
+				var tmpResult = UMWAnalytics.doClick( this );
+				/*UMWAnalytics.log( tmpResult );*/
+				return tmpResult;
+			} );
+		} );
+	}
+
+	// Track Header Links clicks on old website
+	if ( UMWAnalytics.elementExists( '#header #umw-subnav' ) ) {
+		jQuery( '#header #umw-subnav a[href!="#"][href][href!=""]' ).each( function() {
+			var tmpAction = 'Top-Level Header Navigation';
+			var tmpLabel = jQuery( this ).text();
+
+			jQuery( this )
+				.attr( 'analytics-category', 'Header Links' )
+				.attr( 'analytics-action', tmpAction )
+				.attr( 'analytics-label', tmpLabel );
+
+			jQuery( this ).on( 'click', function(e) {
+				var tmpResult = UMWAnalytics.doClick( this );
+				/*UMWAnalytics.log( tmpResult );*/
+				return tmpResult;
+			} );
+		} );
+	}
+
+	// Track other home page clicks on old site
+	if ( UMWAnalytics.elementExists( 'body.network-www.site-root.home' ) ) {
+		jQuery( '#home-middle a[href!="#"][href][href!=""]' ).each( function() {
+			var tmpAction = jQuery( this ).closest( '.widget' ).find( '.widgettitle' ).text();
+			var tmpLabel = jQuery( this ).text();
+			if ( tmpLabel == '' && jQuery( this ).find( 'img' ).length > 0 ) {
+				if ( jQuery( this ).closest( '.post' ).length > 0 ) {
+					tmpLabel = jQuery( this ).closest( '.post' ).find( 'h2' ).text();
+				} else {
+					tmpLabel = jQuery( this ).find( 'img' ).attr( 'alt' );
+				}
+			}
+
+			jQuery( this )
+				.attr( 'analytics-category', 'Home Page Links' )
+				.attr( 'analytics-action', tmpAction )
+				.attr( 'analytics-label', tmpLabel );
+
+			jQuery( this ).on( 'click', function(e) {
+				var tmpResult = UMWAnalytics.doClick( this );
+				/*UMWAnalytics.log( tmpResult );*/
+				return tmpResult;
+			} );
+		} );
+	}
+
+	// Track Footer Links clicks on new website
+	if ( UMWAnalytics.elementExists( '.umw-global-footer' ) ) {
+		jQuery( '.umw-global-footer a[href!="#"][href][href!=""]' ).each( function() {
+			var tmpAction = null;
+			var tmpLabel = null;
+			if ( jQuery( this ).closest( '.primary-global-footer' ).length > 0 ) {
+				tmpAction = 'Primary Footer Area';
+				tmpLabel = jQuery( this ).text();
+			} else if ( jQuery( this ).closest( '.secondary-global-footer' ).length > 0 ) {
+				tmpAction = 'Secondary Footer Area';
+				tmpLabel = jQuery( this ).text();
+			} else {
+				tmpAction = 'Additional Global Footer Links';
+				tmpLabel = jQuery( this ).text();
+			}
+
+			jQuery( this )
+				.attr( 'analytics-category', 'Footer Links' )
+				.attr( 'analytics-action', tmpAction )
+				.attr( 'analytics-label', tmpLabel );
+
+			jQuery( this ).on( 'click', function(e) {
+				var tmpResult = UMWAnalytics.doClick( this );
+				/*UMWAnalytics.log( tmpResult );*/
+				return tmpResult;
+			} );
+		} );
+	}
+
+	// Track Header Links clicks on new site
+	if ( UMWAnalytics.elementExists( '.umw-global-header' ) ) {
+		jQuery( '.umw-global-header a[href!="#"][href][href!=""]' ).each( function() {
+			// Skip over any links that are just supposed to open the mega menu
+			if ( jQuery( this ).closest( 'ul' ).hasClass( 'mega-menu' ) && jQuery( this ).closest( '.mega-menu' ).attr( 'data-event' ) == 'click' ) {
+				return;
+			}
+			
+			var tmpAction = 'Global Header Navigation';
+			var tmpLabel = '';
+			if ( jQuery( this ).find( 'svg' ).length > 0 ) {
+				tmpLabel = jQuery( this ).find( 'svg' ).find( 'title' ).text();
+			} else if ( jQuery( this ).find( 'img' ).length > 0 ) {
+				tmpLabel = jQuery( this ).find( 'img' ).attr( 'alt' );
+			}
+			if ( tmpLabel == '' ) {
+				tmpLabel = jQuery( this ).text();
+			}
+
+			jQuery( this )
+				.attr( 'analytics-category', 'Header Links' )
+				.attr( 'analytics-action', tmpAction )
+				.attr( 'analytics-label', tmpLabel );
+
+			jQuery( this ).on( 'click', function(e) {
+				var tmpResult = UMWAnalytics.doClick( this );
+				/*UMWAnalytics.log( tmpResult );*/
+				return tmpResult;
+			} );
+		} );
+	}
+
+	// Track other home page clicks on new site
+	if ( UMWAnalytics.elementExists( 'body.umw-is-root.home' ) ) {
+		jQuery( '.site-inner a[href!="#"][href][href!=""]' ).each( function() {
+			if ( jQuery( this ).closest( '.flexslider' ).length > 0 ) {
+				return;
+			}
+			
+			var tmpAction = '';
+			if ( jQuery( this ).closest( '.widget' ).find( '.widgettitle' ).length > 0 ) {
+				tmpAction = jQuery( this ).closest( '.widget' ).find( '.widgettitle' ).text();
+			} else if ( jQuery( this ).closest( '.widget' ).find( '.widget-title' ).length > 0 ) {
+				tmpAction = jQuery( this ).closest( '.widget' ).find( '.widget-title' ).text();
+			} else {
+				if ( jQuery( this ).closest( '#homepageCTA' ).length > 0 || jQuery( this ).closest( '.homepage-cta' ).length > 0 ) {
+					tmpAction = 'Home Page Call to Action';
+				} else if ( jQuery( this ).closest( '#impactStatement' ).length > 0 || jQuery( this ).closest( 'impact-statement' ).length > 0 ) {
+					tmpAction = 'Impact Statement';
+				} else if ( jQuery( this ).closest( '.responsive-tabs' ).length > 0 ) {
+					var tmpAction = jQuery( this ).closest( '.tabcontent' ).prev( '.tabtitle' ).text();
+				} else if ( jQuery( this ).closest( '.widget-area' ).length > 0 ) {
+					tmpAction = jQuery( this ).closest( '.widget-area' ).attr( 'class' );
+					tmpAction = tmpAction.replace( '-', ' ' );
+					tmpAction = tmpAction.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+				} else {
+					tmpAction = 'Unidentified Home Page Links';
+				}
+			}
+			var tmpLabel = jQuery( this ).text();
+			if ( tmpLabel == '' && jQuery( this ).find( 'img' ).length > 0 ) {
+				if ( jQuery( this ).closest( '.post' ).length > 0 ) {
+					tmpLabel = jQuery( this ).closest( '.post' ).find( 'h2' ).text();
+				} else {
+					tmpLabel = jQuery( this ).find( 'img' ).attr( 'alt' );
+				}
+			}
+
+			jQuery( this )
+				.attr( 'analytics-category', 'Home Page Links' )
+				.attr( 'analytics-action', tmpAction )
+				.attr( 'analytics-label', tmpLabel );
+
+			jQuery( this ).on( 'click', function(e) {
+				var tmpResult = UMWAnalytics.doClick( this );
+				/*UMWAnalytics.log( tmpResult );*/
+				return tmpResult;
+			} );
+		} );
+	}
+
+	// Track 185r (campus tour) clicks
+	// Works anywhere these campus tour links exist
+	jQuery( 'a[href*="185r.net"], a[href*="askadmissions.net"], a[href*="admissions.umw.edu"]' ).each( function() {
+		var tmpLabel = null;
+		var url = jQuery( this ).attr( 'href' );
+
+		if ( url.indexOf( 'admission_interviews' ) >= 0 ) {
+			tmpLabel = 'Interviews';
+		} else if ( url.indexOf( 'register' ) >= 0 && url.indexOf( 'openhouse' ) >= 0 ) {
+			tmpLabel = 'Open Houses and Interviews';
+		} else if ( url.indexOf( 'shadow_a_student' ) >= 0 ) {
+			tmpLabel = 'Shadow a Student';
+		} else if ( url.indexOf( 'event_landing' ) >= 0 && url.indexOf( 'id=' ) >= 0 ) {
+			tmpLabel = 'Open Houses and Interviews';
+		} else if ( url.indexOf( 'event_landing' ) >= 0 ) {
+			tmpLabel = 'Tours and Info Sessions';
+		} else if ( url.indexOf( 'register' ) >= 0 && url.indexOf( 'id=' ) >= 0 ) {
+			tmpLabel = 'Find my Counselor';
+		} else if ( url.indexOf( 'moreinfo' ) >= 0 ) {
+			tmpLabel = 'Request for Information';
+		}
+
+		if ( tmpLabel === null ) {
+			url = url.split('&');
+
+			for (var i in url) {
+				if (url[i].indexOf('umwpurpose') >= 0) {
+					tmpLabel = url[i].split('=').pop();
+				}
+			}
+		}
+
+		jQuery( this )
+			.attr( 'analytics-category', 'Outbound Links' )
+			.attr( 'analytics-action', 'Campus Tours' )
+			.attr( 'analytics-label', tmpLabel );
+
+		jQuery( this ).on( 'click', function(e) {
+			var tmpResult = UMWAnalytics.doClick( this );
+			/*UMWAnalytics.log( tmpResult );*/
+			return tmpResult;
+		} );
+	} );
+
+	// Track Common App clicks
+	// Works anywhere there are links to the common app
+	jQuery( 'a[href*="commonapp.org"]' ).on( 'click', function(e) {
+		if ( UMWAnalytics.gaExists() ) {
+			ga( 'send', 'event', 'Applications', 'CommonApp' );
+			ga( '2015UMWProfile.send', 'event', 'Applications', 'CommonApp' );
+		}
+		return true;
+	} );
+
+} );
+
+window.onload = function() {
+	// Track clicks on the home page slideshow
+	// Works on both sites
+	jQuery( '.slides .slide' ).each( function() {
+		var tmpAction = jQuery( this ).find( 'h1, .slide-caption-title' ).text();
+		var tmpLabel = 'Slide #' + jQuery( this ).index();
+
+		jQuery( this ).find( 'a' ).each( function() {
+			jQuery( this )
+				.attr( 'analytics-category', 'Home Page Slideshow' )
+				.attr( 'analytics-action', tmpAction )
+				.attr( 'analytics-label', tmpLabel );
+		} );
+
+		jQuery( this ).find( 'a' ).on( 'click', function(e) {
+			var tmpResult = UMWAnalytics.doClick( this );
+			/*UMWAnalytics.log( tmpResult );*/
+			return tmpResult;
+		} );
+	} );
+};
