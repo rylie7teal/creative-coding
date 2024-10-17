@@ -1,7 +1,11 @@
 function preload(){
   noLoop();
   
- // fill("white");
+ // Artists Statement: I was heavily inspired by "Soft Landscapes," both in colors and in general feeling.
+ // When we did the in-class brainstorming exercise, I was reminded of my time spent in the Shenandoah mountains. 
+ //My family would vacation there yearly, and I loved watching the dew burn off the leaves in the morning. 
+ //I tried to capture that with this piece- combining colors that I love with the soft delicacy of a morning in the mountains; 
+ //watching the sunrise while seeing the trees slowly start to reveal themselves as Mother Nature takes off her mask of sleep. 
 }
 
 function setup() {
