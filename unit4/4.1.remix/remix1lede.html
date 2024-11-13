@@ -1,0 +1,81 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<!--
+Lede
+
+Copyright (c) 2012 Nick Montfort <nickm@nickm.com>
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved. This file is offered as-is,
+without any warranty.
+
+I have updated this file and adapted the language within it - Rylie Vann.
+-->
+<style type="text/css">
+/* <![CDATA[ */
+body {
+ background: lawngreen;
+ color: #000;
+ margin: 0 0 0 24pt;
+ font-family: Courier New, sans-serif;
+ font-size: 5 pt;
+}
+a {
+ color: #117;
+ text-decoration: none;
+}
+/* ]]> */
+</style>
+<script type="text/javascript">
+var t = 0;
+var absurd_situation = ["doing taxes", "decorating a Christmas tree", "watching theatre", "going to prom", "listening to a podcast", "recording a podcast", "(allegedly) committing election fraud", "using ChatGPT", "going to Walmart", "playing games on an iPad", "slinking around in the sewers like a little rat"];
+var sad_descriptor = ["a stinky", "a tone deaf", "a nervous", "a boring", "a tiny", "an absolutely huge", "a wimpy", "a vegitarian", "an astute", "a mostly corporeal", "a sentient"];
+var nationality = ["spider", "ant", "dragonfly", "bee", "ladybug", "fly", "flea", "wasp", "cricket", "butterfly", "beetle", "moth"];
+var man_or_woman = ["lady", "tramp", "lady bug", "boy bug"];
+var silly_character = ["a psychic", "a very obviously undercover cop", "Bobby Darin", "a guy in a creepy mascot costume", "another bug, but this one is evil", "that one person who you see everywhere but don't know their name", "an exterminator", "a little old lady", "someone who has not prepared for their presentation today", "a frog", "a pirate king"];
+var interact_with = ["cleans the bathroom for", "probe", "stalk", "fly at", "eat", "noodle with", "make fun of", "scrounge for", "scheme", "run away from", "buzzes at", "stings", "flirts with"];
+function rand_range(max) {
+    "use strict";
+    return Math.floor(Math.random() * (max + 1));
+}
+function fresh(array) {
+    "use strict";
+    var index = rand_range(array.length - 2) + 1, selection = array[index];
+    array[index] = array[0];
+    array[0] = selection;
+    return selection;
+}
+function story() {
+    "use strict";
+    var last, lede, main = document.getElementById('main');
+    if (t <= 12) {
+        t += 1;
+    } else {
+        main.removeChild(document.getElementById('main').firstChild);
+    }
+    last = document.createElement('div');
+    last.appendChild(document.createElement('br'));
+    lede = "While " + fresh(absurd_situation) + ", " + fresh(sad_descriptor) + " " + fresh(nationality) + " " + fresh(man_or_woman) + " had an idea: Why not dress as " + fresh(silly_character) + " and " + fresh(interact_with) + " people?";
+    last.appendChild(document.createTextNode(lede));
+    main.appendChild(last);
+}
+function produce_stories() {
+    "use strict";
+    story();
+    setInterval(story, 3500);
+}</script>
+  <title>Lede</title>
+</head>
+<body onload="produce_stories();">
+<div style="float:right; background:#999; margin-left:6px; border-left:thin #000 solid; border-bottom:thin #000 solid; padding:6px">
+<div><br>Lede<br />Certainly not based on a true story.<br /><a href="https://en.wikipedia.org/wiki/Bug">Bug/a></div>
+
+</div>
+<div id="main"></div>
+</body>
+</html>
