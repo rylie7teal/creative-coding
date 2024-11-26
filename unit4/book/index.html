@@ -31,16 +31,36 @@ a world exists where this could have been made more explicit, but i didn't want 
 
     <style type="text/css">
 /*code for the page number sourced from Paged.js website and this website: https://doppio.sh/blog/mastering-paged-js-essential-tips-for-creating-precision-pdfs-from-html*/
-            @page { 
-      size: A4;
+@page { 
+      size: A5;
       margin: 20mm;
-      @top-right-corner {
-          vertical-align: right;
-          text-align: center;
-          color: black;
-          content: counter(page);
-      }
   }
+
+@page:left {
+    margin: 20mm;
+    @top-left{
+        content: counter(page);
+    }
+}
+
+@page:right {
+    margin: 20mm;
+    @top-right{
+        content: counter(page);
+    }
+}
+h1 {
+    text-align: center;
+}
+h2{
+    page-break-before: right;
+}
+@page: blank {
+  @top-left {
+    content: none;
+  }
+} 
+
     </style>
 
 </head>
