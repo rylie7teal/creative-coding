@@ -56,19 +56,19 @@ if (mouseIsPressed) {
       else if (mouseY > 150 && mouseY < 175) { //blue
         pencolor = "#1982c4";
       } 
-      else if (mouseY > 125 && mouseY < 150) { //indigo
+      else if (mouseY > 175 && mouseY < 200) { //indigo
         pencolor = "#4267ac";
       } 
-      else if (mouseY > 150 && mouseY < 175) { //purple
+      else if (mouseY > 200 && mouseY < 225) { //purple
         pencolor = "#6a4c93";
       } 
-       else if (mouseY > 175 && mouseY < 200) { //violet
+       else if (mouseY > 225 && mouseY < 250) { //violet
         pencolor = "#b5a6c9";
       } 
-      else if (mouseY > 200 && mouseY < 225) { //white
+      else if (mouseY > 250 && mouseY < 275) { //white
         pencolor = "white";
       } 
-      else if (mouseY > 225 && mouseY < 250){ //black
+      else if (mouseY > 275 && mouseY < 300){ //black
         pencolor = "black";
       }
     }
